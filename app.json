@@ -1,0 +1,98 @@
+{
+  "expo": {
+    "name": "ExNode",
+    "slug": "exnode-video-downloader",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#007AFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.exnode.videodownloader",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "ExNode needs camera access to scan QR codes containing video URLs.",
+        "NSPhotoLibraryUsageDescription": "ExNode needs photo library access to save downloaded videos.",
+        "NSPhotoLibraryAddUsageDescription": "ExNode needs permission to save downloaded videos to your photo library.",
+        "UIBackgroundModes": [
+          "background-fetch",
+          "background-processing"
+        ],
+        "BGTaskSchedulerPermittedIdentifiers": [
+          "com.exnode.videodownloader.background-fetch"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#007AFF"
+      },
+      "package": "com.exnode.videodownloader",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow ExNode to access your camera to scan QR codes containing video URLs."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow ExNode to save downloaded videos to your photo library.",
+          "savePhotosPermission": "Allow ExNode to save downloaded videos to your photo library.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#007AFF",
+          "sounds": [
+            "./assets/notification-sound.wav"
+          ]
+        }
+      ],
+      [
+        "expo-background-fetch",
+        {
+          "backgroundFetchPermission": "Allow ExNode to continue downloads in the background."
+        }
+      ],
+      [
+        "expo-task-manager"
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    },
+    "owner": "your-expo-username"
+  }
+}
+
